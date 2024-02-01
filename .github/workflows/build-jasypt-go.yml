@@ -1,0 +1,44 @@
+name: Build Logx Package
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest', 'macOS-latest']
+        go: ['1.19.x', '1.20.x', '1.21.x'] # '1.18.x',
+    runs-on: ${{ matrix.os }}
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:
+      - name: Export Global Var
+        run: |
+          echo "PROJECT_HOME=$PWD" >> $GITHUB_ENV
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - uses: WillAbides/setup-go-faster@v1.12.0
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Build Logx Package
+        run: |
+          go build -v -race
+        working-directory: ./
+
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: ${{ matrix.os }}-${{ matrix.go }}-Jasypt-Go
+#          path: ${{ github.workspace }}/**/Jasypt-Go
+#          retention-days: 1
