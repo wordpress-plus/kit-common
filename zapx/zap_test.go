@@ -1,15 +1,15 @@
-package logx
+package zapx
 
 import (
-	"github.com/wordpress-plus/kit-logger/logx/config"
+	"github.com/wordpress-plus/kit-logger/zapx/config"
 	"testing"
 )
 
 func TestZap(t *testing.T) {
 	zap := config.Zap{
 		Level:         "info",
-		Format:        "console",
-		Prefix:        "[github.com/wordpress-plus/server-core]",
+		Format:        "json",
+		Prefix:        "[kit-logger]",
 		Director:      "log",
 		ShowLine:      true,
 		EncodeLevel:   "LowercaseColorLevelEncoder",

@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"github.com/wordpress-plus/kit-logger/logx/config"
+	"github.com/wordpress-plus/kit-logger/zapx/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -10,7 +10,7 @@ var Zap = new(_zap)
 
 type _zap struct{}
 
-// GetEncoder 获取 zap-core.Encoder
+// GetEncoder 获取 zapx-core.Encoder
 func (z *_zap) GetEncoder(config config.Zap) zapcore.Encoder {
 	if config.Format == "json" {
 		return zapcore.NewJSONEncoder(z.GetEncoderConfig(config))

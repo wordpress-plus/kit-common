@@ -33,9 +33,9 @@ jobs:
 
       - name: Build Logx Package
         run: |
-          go build -v -race
+          # go build -v -race
+          go build ./...
         working-directory: ./
-
 #      - name: Upload Artifact
 #        uses: actions/upload-artifact@v3
 #        with:
