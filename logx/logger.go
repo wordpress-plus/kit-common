@@ -8,17 +8,17 @@ import (
 
 // A Logger represents a logger.
 type Logger interface {
-	// Debug logs a message at info level.
-	Debug(...any)
+	// Debuga logs a message at info level.
+	Debuga(...any)
 	// Debugf logs a message at info level.
 	Debugf(string, ...any)
 	// Debugv logs a message at info level.
 	Debugv(string)
-	// Debugw logs a message at info level.
-	Debugw(string, ...zapcore.Field)
+	// Debug logs a message at info level.
+	Debug(string, ...zapcore.Field)
 
-	// Info logs a message at info level.
-	Info(...any)
+	// Infoa logs a message at info level.
+	Infoa(...any)
 	// Infof logs a message at info level.
 	Infof(string, ...any)
 	// Infov logs a message at info level.
@@ -26,8 +26,8 @@ type Logger interface {
 	// Infow logs a message at info level.
 	Infow(string, ...zapcore.Field)
 
-	// Warn logs a message at error level.
-	Warn(...any)
+	// Warna logs a message at error level.
+	Warna(...any)
 	// Warnf logs a message at error level.
 	Warnf(string, ...any)
 	// Warnv logs a message at error level.
@@ -35,14 +35,14 @@ type Logger interface {
 	// Warnw logs a message at error level.
 	Warnw(string, ...zapcore.Field)
 
-	// Error logs a message at error level.
-	Error(...any)
+	// Errora logs a message at error level.
+	Errora(...any)
 	// Errorf logs a message at error level.
 	Errorf(string, ...any)
 	// Errorv logs a message at error level.
 	Errorv(string)
 	// Errorw logs a message at error level.
-	Errorw(string, ...zapcore.Field)
+	Error(string, ...zapcore.Field)
 
 	// WithCallerSkip returns a new logger with the given caller skip.
 	WithCallerSkip(skip int) Logger

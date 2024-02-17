@@ -65,7 +65,7 @@ func WithDuration(d time.Duration) Logger {
 	}
 }
 
-func (l *richLogger) Debug(v ...any) {
+func (l *richLogger) Debuga(v ...any) {
 	if util.ShallLog(DebugLevel) {
 		l.debug(fmt.Sprint(v...))
 	}
@@ -83,13 +83,13 @@ func (l *richLogger) Debugv(msg string) {
 	}
 }
 
-func (l *richLogger) Debugw(msg string, fields ...zap.Field) {
+func (l *richLogger) Debug(msg string, fields ...zap.Field) {
 	if util.ShallLog(DebugLevel) {
 		l.debug(msg, fields...)
 	}
 }
 
-func (l *richLogger) Info(v ...any) {
+func (l *richLogger) Infoa(v ...any) {
 	if util.ShallLog(InfoLevel) {
 		l.info(fmt.Sprint(v...))
 	}
@@ -113,7 +113,7 @@ func (l *richLogger) Infow(msg string, fields ...zap.Field) {
 	}
 }
 
-func (l *richLogger) Warn(v ...any) {
+func (l *richLogger) Warna(v ...any) {
 	if util.ShallLog(WarnLevel) {
 		l.warn(fmt.Sprint(v...))
 	}
@@ -137,7 +137,7 @@ func (l *richLogger) Warnw(msg string, fields ...zap.Field) {
 	}
 }
 
-func (l *richLogger) Error(v ...any) {
+func (l *richLogger) Errora(v ...any) {
 	if util.ShallLog(ErrorLevel) {
 		l.err(fmt.Sprint(v...))
 	}
@@ -155,7 +155,7 @@ func (l *richLogger) Errorv(v string) {
 	}
 }
 
-func (l *richLogger) Errorw(msg string, fields ...zap.Field) {
+func (l *richLogger) Error(msg string, fields ...zap.Field) {
 	if util.ShallLog(ErrorLevel) {
 		l.err(msg, fields...)
 	}

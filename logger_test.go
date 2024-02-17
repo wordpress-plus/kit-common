@@ -22,5 +22,5 @@ func TestTraceLog(t *testing.T) {
 
 	Logger.WithContext(ctx)
 
-	Logger.Warn("sasa")
+	Logger.Warna("sasa")
 }
