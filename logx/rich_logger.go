@@ -14,6 +14,8 @@ import (
 // assert that richLogger implements the Logger interface
 var _ Logger = (*richLogger)(nil)
 
+const callerDepth = 4
+
 func NewRichLogger() Logger {
 	return &richLogger{
 		logger: zapx.NewZap(),
@@ -193,6 +195,11 @@ func (l *richLogger) WithFields(fields ...zap.Field) Logger {
 
 func (l *richLogger) buildFields(fields ...zap.Field) []zap.Field {
 	fields = append(l.fields, fields...)
+	fields = append(fields, zap.Field{
+		Key:    callerKey,
+		Type:   zapcore.StringType,
+		String: util.GetCaller(callerDepth + l.callerSkip),
+	})
 
 	if l.ctx == nil {
 		return fields

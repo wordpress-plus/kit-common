@@ -14,6 +14,7 @@ const (
 )
 
 const (
+	callerKey   = "caller"
 	durationKey = "duration"
 	spanKey     = "spanId"
 	traceKey    = "traceId"
