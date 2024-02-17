@@ -23,8 +23,8 @@ type Logger interface {
 	Infof(string, ...any)
 	// Infov logs a message at info level.
 	Infov(string)
-	// Infow logs a message at info level.
-	Infow(string, ...zapcore.Field)
+	// Info logs a message at info level.
+	Info(string, ...zapcore.Field)
 
 	// Warna logs a message at error level.
 	Warna(...any)
@@ -32,8 +32,8 @@ type Logger interface {
 	Warnf(string, ...any)
 	// Warnv logs a message at error level.
 	Warnv(string)
-	// Warnw logs a message at error level.
-	Warnw(string, ...zapcore.Field)
+	// Warn logs a message at error level.
+	Warn(string, ...zapcore.Field)
 
 	// Errora logs a message at error level.
 	Errora(...any)

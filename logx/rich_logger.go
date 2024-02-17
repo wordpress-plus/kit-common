@@ -107,7 +107,7 @@ func (l *richLogger) Infov(v string) {
 	}
 }
 
-func (l *richLogger) Infow(msg string, fields ...zap.Field) {
+func (l *richLogger) Info(msg string, fields ...zap.Field) {
 	if util.ShallLog(InfoLevel) {
 		l.info(msg, fields...)
 	}
@@ -131,7 +131,7 @@ func (l *richLogger) Warnv(v string) {
 	}
 }
 
-func (l *richLogger) Warnw(msg string, fields ...zap.Field) {
+func (l *richLogger) Warn(msg string, fields ...zap.Field) {
 	if util.ShallLog(WarnLevel) {
 		l.warn(msg, fields...)
 	}
