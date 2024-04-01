@@ -1,9 +1,9 @@
-package viperx
+package initialize
 
 import (
 	"flag"
 	"fmt"
-	"github.com/alice52/jasypt-go"
+	jasypt "github.com/alice52/jasypt-go"
 	jasyptv "github.com/alice52/jasypt-go/viper"
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"

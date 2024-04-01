@@ -1,8 +1,6 @@
 ## kit-logger
 
-
-## wip
-
-1. caller 
-2. gin tracer
-3. jaeger
+1. zapx 
+2. logx with trace id
+3. vipperx
+4. gormx

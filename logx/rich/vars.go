@@ -1,4 +1,4 @@
-package logx
+package rich
 
 const CallerDepth = 4
 

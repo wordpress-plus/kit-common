@@ -2,7 +2,7 @@ package trace
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-logger/tracing"
+	"github.com/wordpress-plus/kit-common/tracing"
 	"net/http"
 	"net/http/httptest"
 	"testing"

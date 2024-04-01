@@ -1,7 +1,7 @@
 package zapx
 
 import (
-	"github.com/wordpress-plus/kit-logger/zapx/config"
+	"github.com/wordpress-plus/kit-common/zapx/config"
 	"testing"
 )
 

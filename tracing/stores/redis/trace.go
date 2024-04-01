@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	red "github.com/redis/go-redis/v9"
-	"github.com/wordpress-plus/kit-logger/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing/trace"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	oteltrace "go.opentelemetry.io/otel/trace"

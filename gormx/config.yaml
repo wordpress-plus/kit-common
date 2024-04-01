@@ -27,7 +27,7 @@ mysql:
   prefix: ''
   port: '3307'
   config: charset=utf8mb4&parseTime=True&loc=Local
-  db-name: bili_archive
+  db-name: kit-common
   username: root
   password: ENC(Hr8Wap55jGFEQzvJX+lK+P2XSLBFW/IegQjx158Yf5n1u9K05AwGb6n1WH9gy/Aj)
   path: ENC(5c7PpiNjbhGpfXVyF8SnRfVgcqJQz4TChv7Jxk9+kNsUO4825F10OlBRdkWYmtdMyI51LK6C+5/RtYm6lwmA4w==)

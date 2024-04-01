@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/wordpress-plus/kit-logger/tracing"
-	"github.com/wordpress-plus/kit-logger/tracing/httpx/response"
+	"github.com/wordpress-plus/kit-common/tracing"
+	"github.com/wordpress-plus/kit-common/tracing/httpx/response"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"

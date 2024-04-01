@@ -1,4 +1,4 @@
-package kit
+package logx
 
 import (
 	"context"

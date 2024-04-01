@@ -1,0 +1,11 @@
+relation:
+  - table: archived_ups_tag
+    relate:
+      - table: archived_ups
+        foreign_key: tag_id
+        type: has_many
+  - table: archived_ups
+    relate:
+      - table: archived_ups_tag
+        foreign_key: tag_id
+        type: has_one

@@ -2,8 +2,8 @@ package serverinterceptor
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-logger/tracing"
-	"github.com/wordpress-plus/kit-logger/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing"
+	"github.com/wordpress-plus/kit-common/tracing/trace"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
 	oteltrace "go.opentelemetry.io/otel/trace"

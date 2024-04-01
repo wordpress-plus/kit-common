@@ -2,8 +2,8 @@ package clientinterceptors
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-logger/tracing"
-	ztrace "github.com/wordpress-plus/kit-logger/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing"
+	ztrace "github.com/wordpress-plus/kit-common/tracing/trace"
 	"io"
 
 	"go.opentelemetry.io/otel"

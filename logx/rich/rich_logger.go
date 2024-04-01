@@ -1,11 +1,11 @@
-package logx
+package rich
 
 import (
 	"context"
 	"fmt"
-	util "github.com/wordpress-plus/kit-logger/logx/util"
-	"github.com/wordpress-plus/kit-logger/tracing"
-	"github.com/wordpress-plus/kit-logger/zapx"
+	util "github.com/wordpress-plus/kit-common/logx/util"
+	"github.com/wordpress-plus/kit-common/tracing"
+	"github.com/wordpress-plus/kit-common/zapx"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"time"
