@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/alice52/jasypt-go v1.0.6
 	github.com/fsnotify/fsnotify v1.7.0
-	github.com/go-sql-driver/mysql v1.7.0
+	github.com/go-sql-driver/mysql v1.8.1
 	github.com/golang-migrate/migrate/v4 v4.16.2
 	github.com/redis/go-redis/v9 v9.5.1
 	github.com/spf13/viper v1.18.2
@@ -30,6 +30,7 @@ require (
 )
 
 require (
+	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
