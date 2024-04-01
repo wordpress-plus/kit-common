@@ -10,20 +10,21 @@ import (
 	"gorm.io/gorm"
 )
 
-var autoUpdateTimeField = gen.FieldGORMTag("update_time", func(tag field.GormTag) field.GormTag {
-	return map[string][]string{"column": {"update_time"}, "type": {"datetime(3)"}, "autoUpdateTime": {}}
-})
-var autoCreateTimeField = gen.FieldGORMTag("create_time", func(tag field.GormTag) field.GormTag {
-	return map[string][]string{"column": {"create_time"}, "type": {"datetime(3)"}, "autoCreateTime": {}}
-})
-var softDeleteField = gen.FieldType("delete_time", "gorm.DeletedAt")
-
+var (
+	autoUpdateTimeField = gen.FieldGORMTag("update_time", func(tag field.GormTag) field.GormTag {
+		return map[string][]string{"column": {"update_time"}, "type": {"datetime(3)"}, "autoUpdateTime": {}}
+	})
+	autoCreateTimeField = gen.FieldGORMTag("create_time", func(tag field.GormTag) field.GormTag {
+		return map[string][]string{"column": {"create_time"}, "type": {"datetime(3)"}, "autoCreateTime": {}}
+	})
+	softDeleteField = gen.FieldType("delete_time", "gorm.DeletedAt")
+)
 var FieldOpts = []gen.ModelOpt{autoCreateTimeField, autoUpdateTimeField, softDeleteField}
 
 // https://zhuanlan.zhihu.com/p/653483236
 // https://github.com/Alice52/go-tutorial/issues/5#issuecomment-1286325129
 
-func G(dsn, outputDir, relationYaml string) *gen.Generator {
+func G(dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 	var MySQLDSN string
 	if v, err := jasypt.New().Decrypt(dsn); err != nil {
 		MySQLDSN = dsn
@@ -57,10 +58,11 @@ func G(dsn, outputDir, relationYaml string) *gen.Generator {
 		"int":       func(detailType gorm.ColumnType) (dataType string) { return "int64" },
 	}
 	g.WithDataTypeMap(dataMap)
+	g.WithOpts(FieldOpts...)
 
 	ggy.NewYamlGenerator(relationYaml).UseGormGenerator(g).Generate(FieldOpts...) // fieldOpts is not used
-	g.ApplyBasic(g.GenerateAllTable(FieldOpts...)...)
+	//g.ApplyBasic(g.GenerateAllTable()...) // will lose relation, so donot use it after NewYamlGenerator
 	//g.ApplyInterface(func(upsTagInterface) {}, g.GenerateModel("archived_ups_tag", FieldOpts...))
 
-	return g
+	return g, db
 }
