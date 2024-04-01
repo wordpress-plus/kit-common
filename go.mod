@@ -9,7 +9,7 @@ require (
 	github.com/golang-migrate/migrate/v4 v4.16.2
 	github.com/redis/go-redis/v9 v9.5.1
 	github.com/spf13/viper v1.18.2
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	github.com/we7coreteam/gorm-gen-yaml v1.0.7
 	go.mongodb.org/mongo-driver v1.13.1
 	go.opentelemetry.io/otel v1.24.0
