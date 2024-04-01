@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"github.com/wordpress-plus/kit-logger/zapx/config"
+	"github.com/wordpress-plus/kit-common/zapx/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

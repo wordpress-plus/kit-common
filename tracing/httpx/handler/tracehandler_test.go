@@ -2,9 +2,9 @@ package handler
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-logger/tracing/httpx/rest"
-	ztrace "github.com/wordpress-plus/kit-logger/tracing/trace"
-	"github.com/wordpress-plus/kit-logger/tracing/trace/tracetest"
+	"github.com/wordpress-plus/kit-common/tracing/httpx/rest"
+	ztrace "github.com/wordpress-plus/kit-common/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing/trace/tracetest"
 	"io"
 	"net/http"
 	"net/http/httptest"

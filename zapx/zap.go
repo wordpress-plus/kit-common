@@ -2,9 +2,10 @@ package zapx
 
 import (
 	"fmt"
-	"github.com/wordpress-plus/kit-logger/zapx/config"
-	"github.com/wordpress-plus/kit-logger/zapx/internal"
-	"github.com/wordpress-plus/kit-logger/zapx/util"
+	kg "github.com/wordpress-plus/kit-common/kg"
+	"github.com/wordpress-plus/kit-common/zapx/config"
+	"github.com/wordpress-plus/kit-common/zapx/internal"
+	"github.com/wordpress-plus/kit-common/zapx/util"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
@@ -31,4 +32,9 @@ func NewZap() (logger *zap.Logger) {
 	return Zap(config.Zap{
 		Format: "json",
 	})
+}
+
+func InitZap(path ...string) {
+	kg.L = Zap(kg.C.Zap)
+	zap.ReplaceGlobals(kg.L)
 }

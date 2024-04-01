@@ -3,8 +3,8 @@ package clientinterceptors
 import (
 	"context"
 	"errors"
-	ztrace "github.com/wordpress-plus/kit-logger/tracing/trace"
-	"github.com/wordpress-plus/kit-logger/tracing/trace/tracetest"
+	ztrace "github.com/wordpress-plus/kit-common/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing/trace/tracetest"
 	"io"
 	"sync"
 	"sync/atomic"

@@ -3,7 +3,7 @@ package mon
 import (
 	"context"
 	"errors"
-	"github.com/wordpress-plus/kit-logger/tracing/trace"
+	"github.com/wordpress-plus/kit-common/tracing/trace"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.opentelemetry.io/otel/attribute"
