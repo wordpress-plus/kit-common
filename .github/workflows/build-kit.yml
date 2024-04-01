@@ -1,4 +1,4 @@
-name: Build Logx Package
+name: Build Kit-Common Package
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'macOS-latest']
+        os: ['ubuntu-latest'] #, 'macOS-latest'
         go: ['1.19.x', '1.20.x', '1.21.x'] # '1.18.x',
     runs-on: ${{ matrix.os }}
     if: "!contains(github.event.head_commit.message, 'ci skip')"
