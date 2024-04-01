@@ -57,7 +57,9 @@ func G(dsn, outputDir, relationYaml string) {
 	softDeleteField := gen.FieldType("delete_time", "gorm.DeletedAt")
 	fieldOpts := []gen.ModelOpt{autoCreateTimeField, autoUpdateTimeField, softDeleteField}
 
-	yamlgen.NewYamlGenerator(relationYaml).UseGormGenerator(g).Generate(fieldOpts...)
+	// allModel := g.GenerateAllTable(fieldOpts...)
+
+	yamlgen.NewYamlGenerator(relationYaml).UseGormGenerator(g).Generate(fieldOpts...) // todo: bug fieldOpts is noi used
 	// kg.ApplyInterface(func(UserInterface) {}, kg.GenerateModel("user"))
 	g.Execute()
 }
