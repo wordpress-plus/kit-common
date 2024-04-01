@@ -12,7 +12,8 @@ func init() {
 }
 
 func TestInitDB(t *testing.T) {
+	kg.C.System.DbType = kg.DbMysql
 	// 测试InitDB函数
-	InitDB(kg.DbMysql)
+	InitDB()
 	fmt.Printf("mysql: %v", kg.DB)
 }
