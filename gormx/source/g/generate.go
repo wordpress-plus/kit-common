@@ -26,6 +26,7 @@ var FieldOpts = []gen.ModelOpt{autoCreateTimeField, autoUpdateTimeField, softDel
 // https://zhuanlan.zhihu.com/p/653483236
 // https://github.com/Alice52/go-tutorial/issues/5#issuecomment-1286325129
 
+// Deprecated: use G2
 func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 	var DSN string
 	if v, err := jasypt.New().Decrypt(dsn); err != nil {
@@ -43,6 +44,24 @@ func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 		panic("unknown db type")
 	}
 
+	return genCore(dialector, outputDir, relationYaml)
+}
+
+func G2(dbTpe, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
+	var dialector gorm.Dialector
+	switch dbTpe {
+	case kg.DbMysql:
+		dialector = mysql.Open(kg.C.Mysql.Dsn())
+	case kg.DbPgsql:
+		dialector = postgres.Open(kg.C.Pgsql.Dsn())
+	default:
+		panic("unknown db type")
+	}
+
+	return genCore(dialector, outputDir, relationYaml)
+}
+
+func genCore(dialector gorm.Dialector, outputDir string, relationYaml string) (*gen.Generator, *gorm.DB) {
 	// 连接数据库
 	db, err := gorm.Open(dialector)
 	if err != nil {
