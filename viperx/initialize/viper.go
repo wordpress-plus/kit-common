@@ -34,7 +34,7 @@ func getConfigFile(path ...string) string {
 	var config string
 	// parse from cmd first
 	flag.StringVar(&config, "c", "", "choose config file.")
-	flag.Parse()
+	_ = flag.CommandLine.Parse(os.Args[1:])
 
 	// parse from code
 	if len(config) == 0 && len(path) != 0 {
