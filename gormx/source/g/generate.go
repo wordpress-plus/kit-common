@@ -47,9 +47,9 @@ func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 	return genCore(dialector, outputDir, relationYaml)
 }
 
-func G2(dbTpe, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
+func G2(outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
 	var dialector gorm.Dialector
-	switch dbTpe {
+	switch kg.C.System.DbType {
 	case kg.DbMysql:
 		dialector = mysql.Open(kg.C.Mysql.Dsn())
 	case kg.DbPgsql:
