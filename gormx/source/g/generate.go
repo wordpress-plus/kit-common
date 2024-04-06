@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"github.com/alice52/jasypt-go"
 	ggy "github.com/we7coreteam/gorm-gen-yaml"
+	"github.com/wordpress-plus/kit-common/kg"
 	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gen"
 	"gorm.io/gen/field"
 	"gorm.io/gorm"
@@ -24,16 +26,25 @@ var FieldOpts = []gen.ModelOpt{autoCreateTimeField, autoUpdateTimeField, softDel
 // https://zhuanlan.zhihu.com/p/653483236
 // https://github.com/Alice52/go-tutorial/issues/5#issuecomment-1286325129
 
-func G(dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
-	var MySQLDSN string
+func G(dbTpe, dsn, outputDir, relationYaml string) (*gen.Generator, *gorm.DB) {
+	var DSN string
 	if v, err := jasypt.New().Decrypt(dsn); err != nil {
-		MySQLDSN = dsn
+		DSN = dsn
 	} else {
-		MySQLDSN = v
+		DSN = v
+	}
+	var dialector gorm.Dialector
+	switch dbTpe {
+	case kg.DbMysql:
+		dialector = mysql.Open(DSN)
+	case kg.DbPgsql:
+		dialector = postgres.Open(DSN)
+	default:
+		panic("unknown db type")
 	}
 
 	// 连接数据库
-	db, err := gorm.Open(mysql.Open(MySQLDSN))
+	db, err := gorm.Open(dialector)
 	if err != nil {
 		panic(fmt.Errorf("cannot establish db connection: %w", err))
 	}
