@@ -6,8 +6,8 @@ import (
 	"github.com/wordpress-plus/kit-common/zapx"
 )
 
-func Init(path ...string) {
-	viperx.InitViper(path...)
+func Init(conf any, path ...string) {
+	viperx.InitViperV2(conf, path...)
 	zapx.InitZap()
 	gormx.InitDB()
 }
