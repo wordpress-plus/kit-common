@@ -32,15 +32,13 @@ func Viper(conf any, path ...string) *viper.Viper {
 func getConfigFile(path ...string) string {
 
 	var config string
-	// parse from code
-	if len(path) != 0 {
-		config = path[0]
-	}
+	// parse from cmd first
+	flag.StringVar(&config, "c", "", "choose config file.")
+	flag.Parse()
 
-	// parse from cmd
-	if len(config) == 0 {
-		flag.StringVar(&config, "c", "", "choose config file.")
-		flag.Parse()
+	// parse from code
+	if len(config) == 0 && len(path) != 0 {
+		config = path[0]
 	}
 
 	if len(config) == 0 {
