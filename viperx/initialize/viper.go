@@ -1,7 +1,6 @@
 package initialize
 
 import (
-	"flag"
 	"fmt"
 	jasypt "github.com/alice52/jasypt-go"
 	jasyptv "github.com/alice52/jasypt-go/viper"
@@ -33,10 +32,13 @@ func getConfigFile(path ...string) string {
 
 	var config string
 	// parse from cmd first
+	//fs := flag.NewFlagSet(os.Args[0], flag.ContinueOnError)
+	//fs.StringVar(&config, "c", "", "choose config file.")
+	//_ = flag.CommandLine.Parse(os.Args[1:])
 
-	fs := flag.NewFlagSet(os.Args[0], flag.ContinueOnError)
-	fs.StringVar(&config, "c", "", "choose config file.")
-	_ = flag.CommandLine.Parse(os.Args[1:])
+	if con := os.Getenv("config"); len(con) != 0 {
+		config = con
+	}
 
 	// parse from code
 	if len(config) == 0 && len(path) != 0 {
@@ -44,13 +46,9 @@ func getConfigFile(path ...string) string {
 	}
 
 	if len(config) == 0 {
-		if con := os.Getenv("config"); len(con) == 0 {
-			config = "./config-local.yaml"
-		} else {
-			config = con
-		}
+		config = "./config-local.yaml"
 	}
-
+	
 	// pickup default value
 	if len(config) == 0 {
 		panic("config file is not configured")
