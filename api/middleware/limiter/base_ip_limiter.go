@@ -9,9 +9,9 @@ import (
 )
 
 const (
-	localCache = iota
-	localCacheV2
-	redisCache
+	disableLimiter = iota
+	localLimiter
+	redisLimiter
 )
 
 var ErrLimited = errors.New("rate limit exceeded")
@@ -54,17 +54,19 @@ func (l *LimitBase) Process(check CheckFn, expire int, limit int) gin.HandlerFun
 func Limiter() gin.HandlerFunc {
 	cacheType := kg.C.System.LimitType
 
-	if localCache == cacheType {
-		return LocalLimiter()
+	if disableLimiter == cacheType {
+		return func(c *gin.Context) {
+			c.Next()
+		}
 	}
 
-	if localCacheV2 == cacheType {
+	if localLimiter == cacheType {
 		return LocalLimiterV2()
 	}
 
-	if redisCache == cacheType {
+	if redisLimiter == cacheType {
 		return RedisLimiter()
 	}
 
-	panic("未配置缓存类型")
+	panic("非法限流(缓存)类型")
 }
