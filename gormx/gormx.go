@@ -3,9 +3,10 @@ package gormx
 import (
 	"github.com/wordpress-plus/kit-common/gormx/initialize"
 	kg "github.com/wordpress-plus/kit-common/kg"
+	"gorm.io/gorm"
 )
 
-func InitDB() {
+func InitDB() *gorm.DB {
 	dbType := kg.C.System.DbType
 	switch dbType {
 	case kg.DbMysql:
@@ -15,4 +16,6 @@ func InitDB() {
 	default:
 		panic("unknown db type")
 	}
+
+	return kg.DB
 }

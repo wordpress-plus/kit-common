@@ -34,7 +34,8 @@ func NewZap() (logger *zap.Logger) {
 	})
 }
 
-func InitZap(path ...string) {
+func InitZap() *zap.Logger {
 	kg.L = Zap(kg.C.Zap)
 	zap.ReplaceGlobals(kg.L)
+	return kg.L
 }
