@@ -1,17 +1,24 @@
 package vconfig
 
 import (
+	"github.com/wordpress-plus/kit-common/api/aconfig"
 	"github.com/wordpress-plus/kit-common/gormx/gconfig"
 	"github.com/wordpress-plus/kit-common/redis/rconfig"
 	"github.com/wordpress-plus/kit-common/zapx/config"
 )
 
 type Server struct {
-	gconfig.DbServer `yaml:",inline" mapstructure:",squash"`
+	System System     `mapstructure:"system" json:"system" yaml:"system"`
+	Email  Email      `mapstructure:"email" json:"email" yaml:"email"`
+	Zap    config.Zap `mapstructure:"zap" json:"zap" yaml:"zap"`
 
-	Zap    config.Zap    `mapstructure:"zap" json:"zap" yaml:"zap"`
-	Redis  rconfig.Redis `mapstructure:"redis" json:"redis" yaml:"redis"`
-	System System        `mapstructure:"system" json:"system" yaml:"system"`
+	gconfig.DbServer `yaml:",inline" mapstructure:",squash"`
+	Redis            rconfig.Redis `mapstructure:"redis" json:"redis" yaml:"redis"`
+
+	// 跨域配置
+	Cors    aconfig.CORS    `mapstructure:"cors" json:"cors" yaml:"cors"`
+	JWT     aconfig.JWT     `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
+	Captcha aconfig.Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
 }
 
 type System struct {
