@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/alice52/jasypt-go v1.0.6
 	github.com/fsnotify/fsnotify v1.7.0
+	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/golang-migrate/migrate/v4 v4.17.0
