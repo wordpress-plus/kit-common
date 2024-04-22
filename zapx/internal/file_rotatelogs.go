@@ -1,9 +1,10 @@
 package internal
 
 import (
-	"github.com/wordpress-plus/kit-common/zapx/config"
-	"go.uber.org/zap/zapcore"
 	"os"
+
+	"github.com/micro-services-roadmap/kit-common/zapx/config"
+	"go.uber.org/zap/zapcore"
 )
 
 var FileRotatelogs = new(fileRotatelogs)

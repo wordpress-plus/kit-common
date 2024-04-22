@@ -4,10 +4,11 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/mysql"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
-	kg "github.com/wordpress-plus/kit-common/kg"
+	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
 )
 

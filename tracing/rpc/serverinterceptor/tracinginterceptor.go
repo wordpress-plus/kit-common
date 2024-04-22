@@ -2,8 +2,10 @@ package serverinterceptor
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-common/tracing"
-	"github.com/wordpress-plus/kit-common/tracing/trace"
+	"io"
+
+	"github.com/micro-services-roadmap/kit-common/tracing"
+	"github.com/micro-services-roadmap/kit-common/tracing/trace"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
 	oteltrace "go.opentelemetry.io/otel/trace"
@@ -11,7 +13,6 @@ import (
 	gcodes "google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
-	"io"
 )
 
 const (

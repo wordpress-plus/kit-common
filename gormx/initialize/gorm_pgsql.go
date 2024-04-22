@@ -1,10 +1,10 @@
 package initialize
 
 import (
-	"github.com/wordpress-plus/kit-common/gormx/gconfig"
-	"github.com/wordpress-plus/kit-common/gormx/initialize/internal"
-	"github.com/wordpress-plus/kit-common/gormx/migration"
-	"github.com/wordpress-plus/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/gormx/gconfig"
+	"github.com/micro-services-roadmap/kit-common/gormx/initialize/internal"
+	"github.com/micro-services-roadmap/kit-common/gormx/migration"
+	"github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

@@ -1,9 +1,10 @@
 package internal
 
 import (
-	"github.com/wordpress-plus/kit-common/logx"
 	"net/http"
 	"time"
+
+	"github.com/micro-services-roadmap/kit-common/logx"
 
 	"go.opentelemetry.io/otel/propagation"
 )

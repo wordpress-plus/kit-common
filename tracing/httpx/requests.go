@@ -5,13 +5,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/wordpress-plus/kit-common/tracing/httpx/internal"
-	"github.com/wordpress-plus/kit-common/tracing/trace"
-	"github.com/wordpress-plus/kit-common/util"
 	"io"
 	"net/http"
 	nurl "net/url"
 	"strings"
+
+	"github.com/micro-services-roadmap/kit-common/tracing/httpx/internal"
+	"github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/kit-common/util"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"

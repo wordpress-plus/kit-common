@@ -2,9 +2,10 @@ package trace
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-common/tracing"
 	"net"
 	"strings"
+
+	"github.com/micro-services-roadmap/kit-common/tracing"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"

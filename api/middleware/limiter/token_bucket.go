@@ -2,9 +2,10 @@ package limiter
 
 import (
 	"context"
-	"github.com/gin-gonic/gin"
-	"github.com/wordpress-plus/kit-common/api/response"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/micro-services-roadmap/kit-common/api/response"
 )
 
 // Allower rate.NewLimiter(rate.Every(time.Minute), 1)

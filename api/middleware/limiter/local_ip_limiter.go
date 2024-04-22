@@ -1,10 +1,11 @@
 package limiter
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/wordpress-plus/kit-common/kg"
 	"sync"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/micro-services-roadmap/kit-common/kg"
 )
 
 type LocalLimit struct {

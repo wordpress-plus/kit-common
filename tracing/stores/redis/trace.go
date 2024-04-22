@@ -3,8 +3,9 @@ package redis
 import (
 	"context"
 	"errors"
+
+	"github.com/micro-services-roadmap/kit-common/tracing/trace"
 	red "github.com/redis/go-redis/v9"
-	"github.com/wordpress-plus/kit-common/tracing/trace"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	oteltrace "go.opentelemetry.io/otel/trace"

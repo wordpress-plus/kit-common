@@ -1,8 +1,9 @@
 package zapx
 
 import (
-	"github.com/wordpress-plus/kit-common/zapx/config"
 	"testing"
+
+	"github.com/micro-services-roadmap/kit-common/zapx/config"
 )
 
 func TestZap(t *testing.T) {

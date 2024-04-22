@@ -2,9 +2,9 @@ package tracing
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wordpress-plus/kit-common/kg"
-	"github.com/wordpress-plus/kit-common/logx/rich"
-	"github.com/wordpress-plus/kit-common/tracing"
+	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/logx/rich"
+	"github.com/micro-services-roadmap/kit-common/tracing"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"

@@ -3,12 +3,13 @@ package rich
 import (
 	"context"
 	"fmt"
-	util "github.com/wordpress-plus/kit-common/logx/util"
-	"github.com/wordpress-plus/kit-common/tracing"
-	"github.com/wordpress-plus/kit-common/zapx"
+	"time"
+
+	util "github.com/micro-services-roadmap/kit-common/logx/util"
+	"github.com/micro-services-roadmap/kit-common/tracing"
+	"github.com/micro-services-roadmap/kit-common/zapx"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"time"
 )
 
 // assert that richLogger implements the Logger interface

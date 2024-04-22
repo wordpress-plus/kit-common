@@ -4,7 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"github.com/wordpress-plus/kit-common/tracing/trace"
+
+	"github.com/micro-services-roadmap/kit-common/tracing/trace"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"

@@ -2,9 +2,10 @@ package kit
 
 import (
 	"fmt"
-	//"github.com/wordpress-plus/kit-common/gormx/source/g/dal"
-	"github.com/wordpress-plus/kit-common/kg"
+	//"github.com/micro-services-roadmap/kit-common/gormx/source/g/dal"
 	"testing"
+
+	"github.com/micro-services-roadmap/kit-common/kg"
 )
 
 // pk 值是零值就是灾难(如id=0)

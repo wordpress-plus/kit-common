@@ -1,9 +1,9 @@
 package viperx
 
 import (
+	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/viperx/initialize"
 	"github.com/spf13/viper"
-	kg "github.com/wordpress-plus/kit-common/kg"
-	"github.com/wordpress-plus/kit-common/viperx/initialize"
 )
 
 func InitViper(path ...string) {

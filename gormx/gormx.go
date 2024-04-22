@@ -1,8 +1,8 @@
 package gormx
 
 import (
-	"github.com/wordpress-plus/kit-common/gormx/initialize"
-	kg "github.com/wordpress-plus/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/gormx/initialize"
+	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/gorm"
 )
 

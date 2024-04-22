@@ -2,9 +2,10 @@ package gormx
 
 import (
 	"fmt"
-	kg "github.com/wordpress-plus/kit-common/kg"
-	"github.com/wordpress-plus/kit-common/viperx"
 	"testing"
+
+	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/viperx"
 )
 
 func init() {

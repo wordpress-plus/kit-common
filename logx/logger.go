@@ -1,7 +1,7 @@
 package logx
 
 import (
-	"github.com/wordpress-plus/kit-common/logx/rich"
+	"github.com/micro-services-roadmap/kit-common/logx/rich"
 )
 
 // Logger can be global replace.

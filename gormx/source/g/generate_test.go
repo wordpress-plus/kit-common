@@ -1,8 +1,9 @@
 package g
 
 import (
-	"github.com/wordpress-plus/kit-common/kg"
 	"testing"
+
+	"github.com/micro-services-roadmap/kit-common/kg"
 )
 
 func TestG(t *testing.T) {

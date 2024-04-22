@@ -2,9 +2,10 @@ package g
 
 import (
 	"fmt"
+
 	"github.com/alice52/jasypt-go"
+	"github.com/micro-services-roadmap/kit-common/kg"
 	ggy "github.com/we7coreteam/gorm-gen-yaml"
-	"github.com/wordpress-plus/kit-common/kg"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/gen"

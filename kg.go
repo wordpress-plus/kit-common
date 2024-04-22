@@ -1,10 +1,10 @@
 package kit
 
 import (
+	"github.com/micro-services-roadmap/kit-common/gormx"
+	"github.com/micro-services-roadmap/kit-common/viperx"
+	"github.com/micro-services-roadmap/kit-common/zapx"
 	"github.com/spf13/viper"
-	"github.com/wordpress-plus/kit-common/gormx"
-	"github.com/wordpress-plus/kit-common/viperx"
-	"github.com/wordpress-plus/kit-common/zapx"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

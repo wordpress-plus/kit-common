@@ -2,10 +2,11 @@ package limiter
 
 import (
 	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/wordpress-plus/kit-common/api/response"
-	"github.com/wordpress-plus/kit-common/kg"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/micro-services-roadmap/kit-common/api/response"
+	"github.com/micro-services-roadmap/kit-common/kg"
 )
 
 const (

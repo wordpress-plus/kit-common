@@ -2,10 +2,11 @@ package trace
 
 import (
 	"context"
-	"github.com/wordpress-plus/kit-common/tracing"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/micro-services-roadmap/kit-common/tracing"
 
 	"github.com/stretchr/testify/assert"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"

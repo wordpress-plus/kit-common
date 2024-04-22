@@ -2,8 +2,9 @@ package viperx
 
 import (
 	"fmt"
-	kg "github.com/wordpress-plus/kit-common/kg"
 	"testing"
+
+	kg "github.com/micro-services-roadmap/kit-common/kg"
 )
 
 func TestInitViper(_ *testing.T) {

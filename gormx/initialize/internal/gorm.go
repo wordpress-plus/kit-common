@@ -1,13 +1,14 @@
 package internal
 
 import (
-	kg "github.com/wordpress-plus/kit-common/kg"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
 	"log"
 	"os"
 	"time"
+
+	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
+	"gorm.io/gorm/schema"
 )
 
 type DBBASE interface {

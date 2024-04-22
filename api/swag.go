@@ -1,11 +1,12 @@
 package internal
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
+	"github.com/micro-services-roadmap/kit-common/kg"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"github.com/wordpress-plus/kit-common/kg"
-	"net/http"
 )
 
 func Swag(r *gin.Engine) {

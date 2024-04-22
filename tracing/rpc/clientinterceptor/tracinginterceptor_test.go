@@ -3,12 +3,13 @@ package clientinterceptors
 import (
 	"context"
 	"errors"
-	ztrace "github.com/wordpress-plus/kit-common/tracing/trace"
-	"github.com/wordpress-plus/kit-common/tracing/trace/tracetest"
 	"io"
 	"sync"
 	"sync/atomic"
 	"testing"
+
+	ztrace "github.com/micro-services-roadmap/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/kit-common/tracing/trace/tracetest"
 
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/otel/attribute"

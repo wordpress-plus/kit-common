@@ -1,13 +1,14 @@
 package handler
 
 import (
-	"github.com/wordpress-plus/kit-common/tracing"
-	"github.com/wordpress-plus/kit-common/tracing/httpx/response"
+	"net/http"
+
+	"github.com/micro-services-roadmap/kit-common/tracing"
+	"github.com/micro-services-roadmap/kit-common/tracing/httpx/response"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/propagation"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 	oteltrace "go.opentelemetry.io/otel/trace"
-	"net/http"
 )
 
 type (

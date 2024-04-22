@@ -3,14 +3,15 @@ package httpc
 import (
 	"context"
 	"fmt"
-	"github.com/wordpress-plus/kit-common/tracing/trace/tracetest"
 	"net/http"
 	"net/http/httptest"
 	"net/http/httptrace"
 	"strings"
 	"testing"
 
-	ztrace "github.com/wordpress-plus/kit-common/tracing/trace"
+	"github.com/micro-services-roadmap/kit-common/tracing/trace/tracetest"
+
+	ztrace "github.com/micro-services-roadmap/kit-common/tracing/trace"
 
 	"github.com/stretchr/testify/assert"
 	tcodes "go.opentelemetry.io/otel/codes"

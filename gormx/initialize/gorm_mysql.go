@@ -2,10 +2,10 @@ package initialize
 
 import (
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/wordpress-plus/kit-common/gormx/gconfig"
-	"github.com/wordpress-plus/kit-common/gormx/initialize/internal"
-	"github.com/wordpress-plus/kit-common/gormx/migration"
-	kg "github.com/wordpress-plus/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/gormx/gconfig"
+	"github.com/micro-services-roadmap/kit-common/gormx/initialize/internal"
+	"github.com/micro-services-roadmap/kit-common/gormx/migration"
+	kg "github.com/micro-services-roadmap/kit-common/kg"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
