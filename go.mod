@@ -1,4 +1,4 @@
-module github.com/wordpress-plus/kit-common
+module github.com/micro-services-roadmap/kit-common
 
 go 1.20
 
