@@ -8,7 +8,7 @@ import (
 )
 
 func TestInitViper(_ *testing.T) {
-	InitViper("config.yaml")
+	InitViperV0("config.yaml")
 	fmt.Printf("kg.V: %v", kg.V)
 	fmt.Printf("kg.C: %v", kg.C)
 }

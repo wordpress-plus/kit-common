@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	viperx.InitViper("config.yaml")
+	viperx.InitViperV0("config.yaml")
 }
 
 func TestInitDB(t *testing.T) {

@@ -10,13 +10,21 @@ import (
 )
 
 func InitV0(conf any, path ...string) {
-	viperx.InitViperV2(conf, path...)
+	viperx.InitViperWithConf(conf, path...)
 	zapx.InitZap()
 	gormx.InitDB()
 }
 
-func Init(conf any, path ...string) (v *viper.Viper, l *zap.Logger, d *gorm.DB) {
-	v = viperx.InitViperV2(conf, path...)
+func Init(path ...string) (v *viper.Viper, l *zap.Logger, d *gorm.DB) {
+	v = viperx.InitViper(path...)
+	l = zapx.InitZap()
+	d = gormx.InitDB()
+
+	return
+}
+
+func InitWithConf(conf any, path ...string) (v *viper.Viper, l *zap.Logger, d *gorm.DB) {
+	v = viperx.InitViperWithConf(conf, path...)
 	l = zapx.InitZap()
 	d = gormx.InitDB()
 
