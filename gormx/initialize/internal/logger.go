@@ -2,9 +2,15 @@ package internal
 
 import (
 	"fmt"
-
-	kg "github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/micro-services-roadmap/kit-common/kg"
+	"github.com/zeromicro/go-zero/core/logx"
 	"gorm.io/gorm/logger"
+)
+
+const (
+	Console = "console"
+	Zap     = "zap"
+	GoZero  = "go-zero"
 )
 
 type writer struct {
@@ -18,16 +24,18 @@ func NewWriter(w logger.Writer) *writer {
 
 // Printf 格式化打印日志
 func (w *writer) Printf(message string, data ...interface{}) {
-	var logZap bool
+	var logType string
 	switch kg.C.System.DbType {
 	case "mysql":
-		logZap = kg.C.Mysql.LogZap
+		logType = kg.C.Mysql.LogType
 	case "pgsql":
-		logZap = kg.C.Pgsql.LogZap
+		logType = kg.C.Pgsql.LogType
 	}
-	if logZap {
-		kg.L.Info(fmt.Sprintf(message+"\n", data...))
-	} else {
+	if len(logType) == 0 || logType == Console {
 		w.Writer.Printf(message, data...)
+	} else if logType == Zap {
+		kg.L.Info(fmt.Sprintf(message+"\n", data...))
+	} else if logType == GoZero {
+		logx.Debug(fmt.Sprintf(message+"\n", data...))
 	}
 }
