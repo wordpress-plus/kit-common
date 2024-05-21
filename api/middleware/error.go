@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"fmt"
+	"github.com/micro-services-roadmap/kit-common/util"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -18,6 +20,7 @@ import (
 func GinRecovery(stack bool) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
+
 			if err := recover(); err != nil {
 				// Check for a broken connection, as it is not really a
 				// condition that warrants a panic stack trace.
@@ -41,6 +44,12 @@ func GinRecovery(stack bool) gin.HandlerFunc {
 					c.Abort()
 					return
 				}
+
+				defer func() {
+					if er := util.MonitorErrorToEmail("报错项目: "+kg.C.Zap.Prefix, fmt.Sprintf("%v", err)); er != nil {
+						kg.L.Error("MonitorErrorToEmail Failed, err:", zap.Error(er))
+					}
+				}()
 
 				if stack {
 					kg.L.Error("[Recovery from panic]",
