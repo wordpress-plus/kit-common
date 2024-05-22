@@ -39,3 +39,8 @@ mysql:
   log-zap: true
   migration-path: file://./source/migrations
 
+oneid-token:
+  authentication-url: $kong/oneid/token
+  access-key-id: xx
+  access-key-secret: xx
+  subject: xxx
