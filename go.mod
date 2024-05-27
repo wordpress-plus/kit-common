@@ -19,7 +19,7 @@ require (
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
 	github.com/unrolled/secure v1.14.0
-	github.com/we7coreteam/gorm-gen-yaml v1.0.7
+	github.com/we7coreteam/gorm-gen-yaml v1.0.8
 	go.mongodb.org/mongo-driver v1.15.0
 	go.opentelemetry.io/otel v1.24.0
 	go.opentelemetry.io/otel/exporters/jaeger v1.17.0
