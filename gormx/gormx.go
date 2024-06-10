@@ -10,9 +10,9 @@ func InitDB() *gorm.DB {
 	dbType := kg.C.System.DbType
 	switch dbType {
 	case kg.DbMysql:
-		kg.DB = initialize.GormMysql(true)
+		kg.DB = initialize.GormMysql(kg.C.Mysql.Migration)
 	case kg.DbPgsql:
-		kg.DB = initialize.GormPgSQL(true)
+		kg.DB = initialize.GormPgSQL(kg.C.Pgsql.Migration)
 	default:
 		panic("unknown db type")
 	}

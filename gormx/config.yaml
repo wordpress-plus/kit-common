@@ -37,5 +37,6 @@ mysql:
   max-open-conns: 100
   singular: false
   log-zap: true
+  migration: true
   migration-path: file://./source/migrations
 

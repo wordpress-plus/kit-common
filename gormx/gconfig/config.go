@@ -22,5 +22,6 @@ type GeneralDB struct {
 	MaxOpenConns  int    `mapstructure:"max-open-conns" json:"max-open-conns" yaml:"max-open-conns"` // 打开到数据库的最大连接数
 	Singular      bool   `mapstructure:"singular" json:"singular" yaml:"singular"`                   //是否开启全局禁用复数，true表示开启
 	LogType       string `mapstructure:"log-type" json:"log-type" yaml:"log-type"`                   // default:console, optional[console, zap, go-zero]
+	Migration     bool   `mapstructure:"migration" json:"migration" yaml:"migration"`
 	MigrationPath string `mapstructure:"migration-path" json:"migration-path" yaml:"migration-path"` // migration-path
 }
