@@ -29,9 +29,15 @@ func MustParse(tStr string) time.Time {
 }
 
 func Format(t *time.Time) string {
+	if t == nil {
+		return ""
+	}
 	return t.Format("2006-01-02T15:04:05.000Z")
 }
 
 func FormatV0(t *time.Time) string {
+	if t == nil {
+		return ""
+	}
 	return t.Format("2006-01-02 15:04:05")
 }
