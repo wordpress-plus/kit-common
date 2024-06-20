@@ -35,4 +35,5 @@ type System struct {
 	LimitTimeIP  int    `mapstructure:"iplimit-time" json:"iplimit-time" yaml:"iplimit-time"`
 	OssType      string `mapstructure:"oss-type" json:"oss-type" yaml:"oss-type"` // Oss类型
 	RouterPrefix string `mapstructure:"router-prefix" json:"router-prefix" yaml:"router-prefix"`
+	IPQueryKey   string `mapstructure:"ip-query-key" json:"ip-query-key" yaml:"ip-query-key"`
 }
