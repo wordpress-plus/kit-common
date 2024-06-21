@@ -1,4 +1,4 @@
-package ip
+package ipx
 
 type IPInfo struct {
 	IP          string  `json:"ip"`

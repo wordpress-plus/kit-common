@@ -1,4 +1,4 @@
-package ip
+package ipx
 
 import (
 	"encoding/json"
