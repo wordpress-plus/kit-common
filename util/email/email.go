@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/micro-services-roadmap/kit-common/kg"
 	"net/smtp"
+	"regexp"
 	"strings"
 
 	"github.com/jordan-wright/email"
@@ -86,7 +87,12 @@ func DoSend(to, subject, body, from, nickname, secret string) (err error) {
 	}
 	e.To = receivers
 	e.Subject = subject
-	e.Text = []byte(body)
+	if isHTML(body) {
+		e.HTML = []byte(body)
+	} else {
+		e.Text = []byte(body)
+	}
+
 	hostAddr := fmt.Sprintf("%s:%d", host, port)
 	if isSSL {
 		err = e.SendWithTLS(hostAddr, auth, &tls.Config{ServerName: host})
@@ -94,4 +100,11 @@ func DoSend(to, subject, body, from, nickname, secret string) (err error) {
 		err = e.Send(hostAddr, auth)
 	}
 	return err
+}
+
+// isHTML 检查字符串是否包含 HTML 标签
+func isHTML(str string) bool {
+	// 定义一个简单的正则表达式，用于检测 HTML 标签
+	re := regexp.MustCompile(`(?i)<[a-z][\s\S]*>`)
+	return re.MatchString(str)
 }
