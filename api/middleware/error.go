@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/kit-common/util"
+	"github.com/micro-services-roadmap/kit-common/util/email"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -46,7 +46,7 @@ func GinRecovery(stack bool) gin.HandlerFunc {
 				}
 
 				defer func() {
-					if er := util.MonitorErrorToEmail("报错项目: "+kg.C.Zap.Prefix, fmt.Sprintf("%v", err)); er != nil {
+					if er := email.SendToKgSender("报错项目: "+kg.C.Zap.Prefix, fmt.Sprintf("%v", err)); er != nil {
 						kg.L.Error("MonitorErrorToEmail Failed, err:", zap.Error(er))
 					}
 				}()
